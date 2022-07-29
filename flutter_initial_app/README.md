@@ -1,5 +1,9 @@
 # flutter_initial_app
 
+유튜브 코딩셰프 님의 [플러터 강의 순한 맛 시즌1](https://www.youtube.com/playlist?list=PLQt_pzi-LLfpcRFhWMywTePfZ2aPapvyl)을 수강했습니다.
+1년전에 프로그래밍에 대한 지식이 없었을때 들었던 강의이지만 이번에 다시 플러터를 입문해보면서 완벽하게 학습하고자 한다.
+
+
 ### 배운점
 
 - 위젯이란?
