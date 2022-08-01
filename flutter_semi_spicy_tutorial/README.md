@@ -6,6 +6,6 @@
 ### 배운점
 
 - [날씨앱 만들기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_semi_spicy_tutorial/weather_app)
-- [채팅앱 만들기 -ing]
+- [채팅앱 만들기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_semi_spicy_tutorial/chat_app)
 
 ### 느낀점
