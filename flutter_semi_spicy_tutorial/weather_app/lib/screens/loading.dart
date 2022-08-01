@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/data/my_location.dart';
 import 'package:weather_app/data/network.dart';
+import 'package:weather_app/screens/weather_screen.dart';
 
 const apikey = "e61da00df735c3163713e1213d581b52";
 
@@ -23,23 +25,30 @@ class _LoadingState extends State<Loading> {
     MyLocation myLocation = MyLocation();
     await myLocation.getMyCurrentLocation();
     _latitude = myLocation.latitude;
-    _longitude = -myLocation.longitude;
-    print(apikey);
-    Network network = Network(
-        "https://api.openweathermap.org/data/2.5/weather?lat=$_latitude&lon=$_longitude&appid=$apikey");
+    _longitude = myLocation.longitude;
+    Network network = Network('https://api.openweathermap.org/data/2.5/weather'
+        '?lat=$_latitude&lon=$_longitude&appid=$apikey&units=metric',
+        'https://api.openweathermap.org/data/2.5/air_pollution?lat=$_latitude&lon=$_longitude&appid=$apikey');
 
     var weatherData = await network.getJsonData();
-    print(weatherData);
+
+    var airData = await network.getAirData();
+
+    Navigator.push(context, MaterialPageRoute(builder: (context){
+      return WeatherScreen(parseWeatherData: weatherData,parseAirPollution: airData,);
+    }));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+      backgroundColor: Colors.amber,
       body: Center(
-          child: ElevatedButton(
-        onPressed: () => {null},
-        child: Text("Get my location"),
-      )),
+          child: SpinKitDoubleBounce(
+            color: Colors.white,
+            size: 80.0,
+          ),
+      ),
     );
   }
 }
