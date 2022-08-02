@@ -12,9 +12,14 @@ import 'package:get/get.dart';
 enum PageName { HOME, SEARCH, UPLOAD, ACTIVITY, MYPAGE }
 
 class BottomNavController extends GetxController {
+  //  Get.find() 함수를 치환하여 to 라고 부르겠다
+  static BottomNavController get to => Get.find();
   RxInt pageIndex = 0.obs;
   // 페이지 쌓는 기록
   List<int> bottomHistory = [0];
+
+  GlobalKey<NavigatorState> searchPageNavigationKey =
+      GlobalKey<NavigatorState>();
 
   void changeBottomNav(int value, {bool hasGesture = true}) {
     PageName page = PageName.values[value];
@@ -53,6 +58,13 @@ class BottomNavController extends GetxController {
               ));
       return true;
     } else {
+      PageName page = PageName.values[bottomHistory.last];
+      if (page == PageName.SEARCH) {
+        // 팝할것이 있다면, 팝 한 뒤 true 를 반환함, value 가 false라는 것은 팝할게 없다는것
+        bool value = await searchPageNavigationKey.currentState!.maybePop();
+        if (value) return false;
+      }
+
       bottomHistory.removeLast();
       int index = bottomHistory.last;
       changeBottomNav(index, hasGesture: false);

@@ -18,7 +18,14 @@ class App extends GetView<BottomNavController> {
               index: controller.pageIndex.value,
               children: [
                 const Home(),
-                const Search(),
+                // 검색 페이지는 중첩 라우팅을 위해서 Get Route 사용하지 않는다.
+                Navigator(
+                  key: controller.searchPageNavigationKey,
+                  onGenerateRoute: (routeSetting) {
+                    return MaterialPageRoute(
+                        builder: (context) => const Search());
+                  },
+                ),
                 Container(
                   child: Center(child: Text("UPLOAD")),
                 ),

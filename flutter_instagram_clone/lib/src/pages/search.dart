@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_instagram_clone/src/pages/search/search_focus.dart';
 import 'package:get/get.dart';
 import 'package:quiver/iterables.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,11 @@ class _SearchState extends State<Search> {
       children: [
         Expanded(
           child: GestureDetector(
-            onTap: () {},
+            // 중첩라우팅을 위해 flutte default route 사용
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const SearchFocus()));
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               margin: const EdgeInsets.only(left: 15),
@@ -65,12 +70,12 @@ class _SearchState extends State<Search> {
   Widget _body() {
     return SingleChildScrollView(
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: List.generate(
-          groupBox.length,
-          (index) => Expanded(
-            child: Column(
-              children: List.generate(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: List.generate(
+            groupBox.length,
+            (index) => Expanded(
+              child: Column(
+                  children: List.generate(
                 groupBox[index].length,
                 (jndex) => Container(
                   height: Get.width * 0.33 * groupBox[index][jndex],
@@ -81,11 +86,9 @@ class _SearchState extends State<Search> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ).toList()
+              ).toList()),
             ),
-          ),
-        ).toList()
-      ),
+          ).toList()),
     );
   }
 
@@ -97,7 +100,7 @@ class _SearchState extends State<Search> {
         children: [
           // appbar can be scrolled
           _appbar(),
-            Expanded(child: _body()),
+          Expanded(child: _body()),
         ],
       )),
     );
