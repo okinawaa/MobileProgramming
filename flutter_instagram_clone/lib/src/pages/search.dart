@@ -39,7 +39,7 @@ class _SearchState extends State<Search> {
           child: GestureDetector(
             onTap: () {},
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               margin: const EdgeInsets.only(left: 15),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
