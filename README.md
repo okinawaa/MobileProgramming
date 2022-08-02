@@ -9,3 +9,7 @@
 ### 플러터 강의 조금 매운맛 (2022-07-30 ~ 2022-08-02)
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_semi_spicy_tutorial)
+
+### 플러터 상태관리 GetX 튜토리얼 (2022-08-02)
+
+[바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_getx_tutorial)
