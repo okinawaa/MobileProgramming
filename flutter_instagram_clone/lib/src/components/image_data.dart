@@ -12,7 +12,7 @@ class ImageData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Get.mediaQuery.devicePixelRatio);
+    print("pixel ratio : ${Get.mediaQuery.devicePixelRatio}"  );
     return Image.asset(
       icon,
       width: width! / Get.mediaQuery.devicePixelRatio,
