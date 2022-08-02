@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram_clone/src/app.dart';
+import 'package:flutter_instagram_clone/src/binding/init_bindings.dart';
 import 'package:get/route_manager.dart';
 
 void main() {
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
           titleTextStyle: TextStyle(color: Colors.black)
         ),
       ),
+      // 앱이 실행되는 순간 인스턴스로 올라간다
+      initialBinding: InitBinding(),
       home: const App(),
     );
   }
