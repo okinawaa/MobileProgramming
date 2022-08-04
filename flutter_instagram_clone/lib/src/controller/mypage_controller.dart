@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_instagram_clone/src/controller/auth_controller.dart';
+import 'package:flutter_instagram_clone/src/models/instagram_user.dart';
 import 'package:get/get.dart';
 
 // 마이페이지에 대한 컨트롤러
 class MypageController extends GetxController with GetTickerProviderStateMixin {
   late TabController tabController;
+  // targetUser can be me or other person
+  Rx<IUser> targetUser = IUser().obs;
 
   @override
   void onInit() {
@@ -21,7 +25,7 @@ class MypageController extends GetxController with GetTickerProviderStateMixin {
     var uid = Get.parameters["targetUid"];
 
     if (uid == null) {
-      // targetUser(AuthController.to.user.value)
+      targetUser(AuthController.to.user.value);
     }
   }
 }
