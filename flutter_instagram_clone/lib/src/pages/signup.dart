@@ -41,6 +41,10 @@ class _SignupState extends State<Signup> {
         const SizedBox(height: 15),
         ElevatedButton(
           onPressed: () async {
+            /* ios 는 하기 코드 추가 요망
+  <key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to photo library</string>
+      */
             thumbnailXFile =
                 await _picker.pickImage(source: ImageSource.gallery);
             update();
@@ -111,6 +115,7 @@ class _SignupState extends State<Signup> {
               nickname: nicknameController.text,
               description: descriptionController.text,
             );
+            print(signupUser.thumbnail);
             AuthController.to.signup(signupUser, thumbnailXFile);
           },
           child: const Text('회원가입'),

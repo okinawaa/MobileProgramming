@@ -34,9 +34,9 @@ class AuthController extends GetxController {
       task.snapshotEvents.listen((event) async {
         if (event.bytesTransferred == event.totalBytes &&
             event.state == TaskState.success) {
-          var downloadUrl = await event.ref.getDownloadURL();
+          String downloadUrl = await event.ref.getDownloadURL();
           // for immutable using copyWith
-          var updatedUserData = signupUser.copyWith(thumbnail: downloadUrl);
+          IUser updatedUserData = signupUser.copyWith(thumbnail: downloadUrl);
           _submitSignup(updatedUserData);
         }
       });
@@ -53,7 +53,7 @@ class AuthController extends GetxController {
     return ref.putFile(f, metadata);
   }
 
-// 회원가입 신청
+  // 회원가입 신청
   void _submitSignup(IUser signupUser) async {
     var result = await UserRepository.signup(signupUser);
     // 회원가입후 받은 uid 를 이용해서 로그인
