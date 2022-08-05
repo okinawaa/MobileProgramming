@@ -14,6 +14,7 @@
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_getx_tutorial)
 
-### 플러터 인스타그램 클론코딩 (2022-08-02 ~ ing)
+### 플러터 인스타그램 클론코딩 (2022-08-02 ~ 2022-08-05)
+퍼블리싱 + 기능연동 + firebase
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_instagram_clone)
