@@ -5,10 +5,12 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_instagram_clone/src/components/avatar_widget.dart';
 import 'package:flutter_instagram_clone/src/components/image_data.dart';
+import 'package:flutter_instagram_clone/src/models/post.dart';
 import 'package:get/get.dart';
 
 class PostWidget extends StatelessWidget {
-  const PostWidget({Key? key}) : super(key: key);
+  final Post post;
+  const PostWidget({Key? key, required this.post}) : super(key: key);
 
   Widget _header() {
     return Padding(
@@ -16,11 +18,11 @@ class PostWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const AvatarWidget(
+          AvatarWidget(
             type: AvatarType.TYPE3,
-            thumbPath: "https://picsum.photos/200",
+            thumbPath: post.userInfo!.thumbnail!,
             size: 40,
-            nickname: "개복치복치",
+            nickname: post.userInfo!.nickname,
           ),
           GestureDetector(
             onTap: () {},
@@ -38,8 +40,7 @@ class PostWidget extends StatelessWidget {
   }
 
   Widget _image() {
-    return CachedNetworkImage(
-        imageUrl: "https://picsum.photos/${Get.width.round()}");
+    return CachedNetworkImage(imageUrl: post.thumbnail!);
   }
 
   Widget _infoCount() {
@@ -90,7 +91,7 @@ class PostWidget extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           ExpandableText(
-            "댓글입니다\n댓글입니다댓글입니다\n댓글입니다댓글입니다\n댓글입니다댓글입니다\n댓글입니다",
+            "${post.description}\n${post.description}\n${post.description}\n${post.description}\n",
             expandText: '더보기',
             prefixText: "박찬혁",
             onPrefixTap: () {

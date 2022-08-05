@@ -122,7 +122,7 @@ class UploadDescription extends GetView<UploadController> {
           GestureDetector(
             onTap: controller.uploadPost,
             child: Padding(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               child: ImageData(
                 IconsPath.uploadComplete,
                 width: 50,
