@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_instagram_clone/src/binding/init_bindings.dart';
 import 'package:flutter_instagram_clone/src/models/instagram_user.dart';
@@ -60,5 +61,9 @@ class AuthController extends GetxController {
     if (result) {
       loginUser(signupUser.uid!);
     }
+  }
+
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 }

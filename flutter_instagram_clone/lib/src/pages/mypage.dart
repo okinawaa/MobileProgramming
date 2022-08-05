@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_instagram_clone/src/components/avatar_widget.dart';
 import 'package:flutter_instagram_clone/src/components/image_data.dart';
 import 'package:flutter_instagram_clone/src/components/user_card.dart';
+import 'package:flutter_instagram_clone/src/controller/auth_controller.dart';
 import 'package:flutter_instagram_clone/src/controller/mypage_controller.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
@@ -215,12 +216,15 @@ class MyPage extends GetView<MypageController> {
             ),
           ),
           GestureDetector(
-            onTap: () {},
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: ImageData(
-                IconsPath.menuIcon,
-                width: 50,
+            onTap: () {
+              AuthController.to.signOut();
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Icon(
+                Icons.exit_to_app,
+                size: 20,
+                color: Colors.black,
               ),
             ),
           )
