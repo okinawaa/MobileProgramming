@@ -53,7 +53,7 @@
 
 처음엔 웹보다 어려워보였던 앱개발이 점점 쉽게 다가와지는것 같다. 반응형도 크게 고려할 필요없으니 오히려 퍼블리싱 + 데이터 패칭에만 몰두할 수 있어서 더 편리한 것 같다
 
-### Troubling shooting
+### Trouble shooting
 
 - ios 에서 firebase 연동
   - RUNNER folder 에 google-services.json 이 제대로 삽입되있는지 확인한다.
