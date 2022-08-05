@@ -5,9 +5,20 @@
 
 
 
-### 데모영상
+### 데모영상 
+플러터로 개발한 뒤, IOS AOS 둘다 개발했어! 라고 끝내는경우가 많은데, 
+실제로 둘다 돌려보기전까지는 절대 모르는법.
+
+
+### IOS
 
 ![ezgif com-gif-maker-2](https://user-images.githubusercontent.com/69495129/183050665-3a4f4bf3-bbfd-4793-b136-b7cae64eeabc.gif)
+
+### AOS
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/69495129/183076540-2b200bbb-e23e-4f33-bf65-cd65d4cf9c6e.gif)
+
+
 
 ### folder structure
 
