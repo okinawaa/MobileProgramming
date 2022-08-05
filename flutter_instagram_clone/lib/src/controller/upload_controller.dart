@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_instagram_clone/src/components/message_popup.dart';
+import 'package:flutter_instagram_clone/src/controller/home_controller.dart';
 import 'package:flutter_instagram_clone/src/pages/upload/upload_description.dart';
 import 'package:flutter_instagram_clone/src/repository/post_repository.dart';
 import 'package:flutter_instagram_clone/src/utils/data_util.dart';
@@ -144,6 +145,7 @@ class UploadController extends GetxController {
         title: '포스트',
         message: '포스팅이 완료 되었습니다.',
         okCallback: () {
+          HomeController.to.loadFeedList();
           Get.until((route) => Get.currentRoute == '/');
         },
       ),
