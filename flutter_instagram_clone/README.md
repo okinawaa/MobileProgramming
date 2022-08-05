@@ -53,4 +53,25 @@
 
 처음엔 웹보다 어려워보였던 앱개발이 점점 쉽게 다가와지는것 같다. 반응형도 크게 고려할 필요없으니 오히려 퍼블리싱 + 데이터 패칭에만 몰두할 수 있어서 더 편리한 것 같다
 
+### Troubling shooting
 
+- ios 에서 firebase 연동
+  - RUNNER folder 에 google-services.json 이 제대로 삽입되있는지 확인한다.
+  - xcode 에서 google-services.json 파일을 직접 주입해주자.
+
+- ios 에서 google sign-in 에러
+  - info.plish 에 나의 key를 복사해줘야한다.
+
+- ios 에서 카메라 앨범 권한 이슈
+  - info.plist 에 하기의 코드를 추가해준다
+  
+  ```
+  <key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to photo library</string>
+  ```
+
+- photo_manager upgrade 로 인한 스펙 변경
+  - asset.thumbnailDataWithSize(ThumbnailSize(size, size) 와 같이 인자에 클래스를 넣어줘야한다. (기존에는 size를 넣어줬어야함)
+  
+- android Multidex issue
+  - https://stackoverflow.com/questions/49886597/multidex-issue-with-flutter
