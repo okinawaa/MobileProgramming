@@ -18,3 +18,8 @@
 퍼블리싱 + 기능연동 + firebase
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_instagram_clone)
+
+### 플러터 항공 티켓 예매 앱 (2022-08-05 ~ ing)
+퍼블리싱 
+
+[바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_ticket_book_app)
