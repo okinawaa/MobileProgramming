@@ -9,6 +9,23 @@ import 'package:gap/gap.dart';
 class TicketView extends StatelessWidget {
   const TicketView({Key? key}) : super(key: key);
 
+  Widget _twoLineText(firstLineContent, secondLineContent, alignOption) {
+    return Column(
+      crossAxisAlignment: alignOption,
+      children: [
+        Text(
+          firstLineContent,
+          style: Styles.headLineStyle3.copyWith(color: Colors.white),
+        ),
+        const Gap(5),
+        Text(
+          secondLineContent,
+          style: Styles.headLineStyle4.copyWith(color: Colors.white),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
@@ -177,53 +194,10 @@ class TicketView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "1 MAY",
-                          style: Styles.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
-                        const Gap(5),
-                        Text(
-                          "DATE",
-                          style: Styles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "08:00 AM",
-                          style: Styles.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
-                        const Gap(5),
-                        Text(
-                          "Departure time",
-                          style: Styles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          "23",
-                          style: Styles.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
-                        const Gap(5),
-                        Text(
-                          "NUMBERS",
-                          style: Styles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
+                    _twoLineText("1 MAY", "Date", CrossAxisAlignment.start),
+                    _twoLineText("08:00 AM", "Departure time",
+                        CrossAxisAlignment.center),
+                    _twoLineText("23", "Numbers", CrossAxisAlignment.end),
                   ],
                 )
               ]),
