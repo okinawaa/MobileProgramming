@@ -6,31 +6,11 @@ import 'package:flutter_ticket_book_app/screens/hotel_view.dart';
 import 'package:flutter_ticket_book_app/screens/ticket_view.dart';
 import 'package:flutter_ticket_book_app/utils/app_info_list.dart';
 import 'package:flutter_ticket_book_app/utils/app_styles.dart';
+import 'package:flutter_ticket_book_app/widgets/title_space_button_widget.dart';
 import 'package:gap/gap.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
-  Widget _titleSpaceButton(title) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: Styles.headLineStyle2,
-        ),
-        InkWell(
-          onTap: () {
-            print("You are tapped");
-          },
-          child: Text(
-            "View all",
-            style: Styles.textStyle.copyWith(color: Styles.primaryColor),
-          ),
-        ),
-      ],
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const Gap(40),
-              _titleSpaceButton("Upcoming Flights"),
+              const TitleSpaceButton(title: "Upcoming Flights"),
             ]),
           ),
           const Gap(15),
@@ -106,7 +86,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: _titleSpaceButton("Hotels")),
+              child: const TitleSpaceButton(title: "Hotels")),
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
