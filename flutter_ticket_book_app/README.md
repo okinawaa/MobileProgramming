@@ -1,16 +1,27 @@
 # flutter_ticket_book_app
 
-A new Flutter project.
+퍼블리싱 연습
 
-## Getting Started
+### 데모 사진
 
-This project is a starting point for a Flutter application.
+![image](https://user-images.githubusercontent.com/69495129/183298094-27da7526-9cf8-4c4b-b2c7-172cb2ee8b01.png)
+![image](https://user-images.githubusercontent.com/69495129/183298104-6bc65091-1aa3-4351-8ce5-640954689bf6.png)
 
-A few resources to get you started if this is your first Flutter project:
+### 배운점
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. reusable style component
+
+2. reusable color pallet
+
+3. reusable column widget
+
+4. reusable layout builder widget
+
+5. reusable column widget
+
+6. reusable row widget
+
+7. reusable ticket widget
+
+전체적인 스타일코드를 재사용하는 방법에 대해서 배웠다.
