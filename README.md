@@ -19,7 +19,9 @@
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_instagram_clone)
 
-### 플러터 항공 티켓 예매 앱 (2022-08-05 ~ ing)
+### 플러터 항공 티켓 예매 앱 (2022-08-05 ~ 2022-08-13)
 퍼블리싱 
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_ticket_book_app)
+
+### 플러터 GetX 심화 학습
