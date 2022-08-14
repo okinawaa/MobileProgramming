@@ -24,4 +24,4 @@
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_ticket_book_app)
 
-### 플러터 GetX 심화 학습
+### 플러터 GetX 심화 학습 (2022-08-18 ~
