@@ -24,4 +24,5 @@
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_ticket_book_app)
 
-### 플러터 GetX 심화 학습 (2022-08-18 ~
+### 플러터 클린 아케틱쳐 2022-08-22 ~
+실무에서 바로적용한 폴더구조와 아키텍쳐
