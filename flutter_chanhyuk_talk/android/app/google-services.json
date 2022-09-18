@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "264764011709",
+    "project_id": "chanhyuk-talk",
+    "storage_bucket": "chanhyuk-talk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264764011709:android:3a88bffa4428469c6a33d4",
+        "android_client_info": {
+          "package_name": "com.example.flutter_chanhyuk_talk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264764011709-mgs7ito09sbpphmgdlrlsgv3rmkblksn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-ShYIDt92pzvdCW3LmO_Tazi1fH1zy-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264764011709-mgs7ito09sbpphmgdlrlsgv3rmkblksn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264764011709-upo856abon7k0bqij0cku7t3b50dr1en.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterChanhyukTalk"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
