@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_chanhyuk_talk/screens/home/home_screen.dart';
+import 'package:flutter_chanhyuk_talk/screens/notification/notification_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -17,8 +16,12 @@ class _MainScreenState extends State<MainScreen> {
     switch (_currentPageIndex) {
       case 0:
         return const HomeScreen();
-      default:
+      case 1:
         return const HomeScreen();
+      case 2:
+        return const HomeScreen();
+      default:
+        return const NotificationScreen();
     }
   }
 
@@ -31,7 +34,38 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.transparent),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black,
+        title: const Text("chanhyuk talk"),
+        elevation: 0,
+      ),
+      body: _getScreens(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentPageIndex,
+        type: BottomNavigationBarType.fixed,
+        onTap: _changePage,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_bubble_outline),
+            label: 'Chat',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'User',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications_outlined),
+            label: 'notifications',
+          ),
+        ],
+      ),
     );
   }
 }

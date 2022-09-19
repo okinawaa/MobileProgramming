@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chanhyuk_talk/components/register/form_item.dart';
+import 'package:flutter_chanhyuk_talk/controllers/user_controller.dart';
+import 'package:get/get.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -10,14 +12,47 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   bool phoneChecked = false;
-  final GlobalKey _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _name = "";
   String _phone = "";
   String _email = "";
   String _password = "";
 
   void buttonPressed(BuildContext context) async {
-    return;
+    if (!phoneChecked) {
+      Get.dialog(const Dialog(
+        child: SizedBox(
+          width: double.infinity,
+          height: 60,
+          child: Center(
+            child: Text("휴대폰번호를 인증해주세요."),
+          ),
+        ),
+      ));
+      return;
+    }
+
+    if (_formKey.currentState!.validate()) {
+      FocusScope.of(context).unfocus();
+      // 값저장
+      _formKey.currentState!.save();
+      bool registered = await UserController.to.registerUser(
+          name: _name, phone: _phone, email: _email, password: _password);
+
+      if (registered) {
+        Future.delayed(
+            const Duration(seconds: 1), () => Get.offAllNamed("/main"));
+      } else {
+        Get.dialog(Dialog(
+          child: Container(
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: 100,
+            child: const Text('회원가입 실패'),
+          ),
+        ));
+      }
+    }
   }
 
   @override
