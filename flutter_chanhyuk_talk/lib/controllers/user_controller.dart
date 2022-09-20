@@ -72,6 +72,7 @@ class UserController extends GetxController {
           .where("password", isEqualTo: password)
           .get();
 
+      if (_loginData.docs.isEmpty) return false;
       if (_loginData.docs.isNotEmpty) {
         user = User.fromJson(
             {"id": _loginData.docs.first.id, ..._loginData.docs.first.data()});
