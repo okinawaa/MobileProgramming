@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chanhyuk_talk/screens/chat/chat_screen.dart';
 import 'package:flutter_chanhyuk_talk/screens/home/home_screen.dart';
 import 'package:flutter_chanhyuk_talk/screens/notification/notification_screen.dart';
 
@@ -24,9 +25,7 @@ class _MainScreenState extends State<MainScreen> {
           pageUpdateFunction: _changePage,
         );
       case 1:
-        return HomeScreen(
-          pageUpdateFunction: _changePage,
-        );
+        return const ChatScreen();
       case 2:
         return HomeScreen(
           pageUpdateFunction: _changePage,
