@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_chanhyuk_talk/controllers/local_controller.dart';
@@ -82,5 +84,39 @@ class UserController extends GetxController {
       print("로그인 오류 $e");
       return false;
     }
+  }
+
+  Future<bool> uploadProfileImage(File file) async {
+    try {
+      String destination = 'images/${user!.id}';
+      final ref = _fireStorage.ref(destination);
+      TaskSnapshot uploadedFile = await ref.putFile(file);
+      if (user!.imageUrl.isEmpty) {
+        String downloadUrl = await uploadedFile.ref.getDownloadURL();
+        await _firestore
+            .collection("user")
+            .doc(user!.id)
+            .update({'imageUrl': downloadUrl});
+      }
+
+      return true;
+    } catch (e) {
+      print(e);
+      return false;
+    }
+  }
+
+  Future<void> refreshUser() async {
+    DocumentSnapshot<Map<String, dynamic>> _userData =
+        await _firestore.collection("user").doc(user!.id).get();
+
+    user = User.fromJson({'id': _userData.id, ..._userData.data()!});
+  }
+
+  Future<User> getUserById(String id) async {
+    DocumentSnapshot<Map<String, dynamic>> _userData =
+        await _firestore.collection("user").doc(id).get();
+
+    return User.fromJson({'id': _userData.id, ..._userData.data()!});
   }
 }

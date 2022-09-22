@@ -11,24 +11,29 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentPageIndex = 0;
-
-  Widget _getScreens() {
-    switch (_currentPageIndex) {
-      case 0:
-        return const HomeScreen();
-      case 1:
-        return const HomeScreen();
-      case 2:
-        return const HomeScreen();
-      default:
-        return const NotificationScreen();
-    }
-  }
-
   void _changePage(int index) {
     setState(() {
       _currentPageIndex = index;
     });
+  }
+
+  Widget _getScreens() {
+    switch (_currentPageIndex) {
+      case 0:
+        return HomeScreen(
+          pageUpdateFunction: _changePage,
+        );
+      case 1:
+        return HomeScreen(
+          pageUpdateFunction: _changePage,
+        );
+      case 2:
+        return HomeScreen(
+          pageUpdateFunction: _changePage,
+        );
+      default:
+        return const NotificationScreen();
+    }
   }
 
   @override
