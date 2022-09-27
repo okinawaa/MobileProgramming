@@ -25,7 +25,9 @@
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_ticket_book_app)
 
 ### 플러터 클린 아케틱쳐 2022-08-22 ~ 2022-09-10
-실무에서 바로적용한 폴더구조와 아키텍쳐 (문서정리 필요)
+실무에서 바로적용한 폴더구조와 아키텍쳐
+[바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_clean_architecture)
+
 
 ### 플러터 파이어베이스 채팅 어플리케이션 만들기(not 클론)
 
