@@ -27,6 +27,7 @@ class NoteDbHelper {
   }
 
   Future<void> insertNote(Note note) async {
+    // API CALL
     await db.insert('note', note.toJson());
   }
 
@@ -40,7 +41,8 @@ class NoteDbHelper {
   }
 
   Future<void> deleteNote(Note note) async {
-    await db.delete('note',
+    await db.delete(
+      'note',
       where: 'id = ?',
       whereArgs: [note.id],
     );
