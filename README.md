@@ -32,3 +32,5 @@
 ### 플러터 파이어베이스 채팅 어플리케이션 만들기(not 클론)
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_chanhyuk_talk)
+
+### 플러터 주식 앱 2022-10-01 ~
