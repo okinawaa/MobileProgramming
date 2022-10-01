@@ -45,5 +45,11 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>프로필 이미지 수정을 위해 이 앱에서 카메라에 접근을 하려고 합니다.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app does not require access to the microphone.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필 이미지 수정을 위해 이 앱에서 갤러리에 접근을 하려고 합니다.</string>
 </dict>
 </plist>

@@ -99,7 +99,7 @@ class ChatUtils {
       'senderId': UserController.to.user!.id,
       'message': message,
       'messageType': messageType,
-      'timeStamp': Timestamp,
+      'timeStamp': _timeStamp,
     });
   }
 
@@ -112,6 +112,7 @@ class ChatUtils {
       TaskSnapshot uploadedFile = await ref.putFile(image);
       return await uploadedFile.ref.getDownloadURL();
     } catch (e) {
+      print(e);
       return null;
     }
   }
