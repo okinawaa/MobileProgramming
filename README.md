@@ -36,3 +36,8 @@
 ### 플러터 주식 앱 2022-10-01 ~ 2022-10-02
 
 [바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_stock_app)
+
+
+### 플러터 Hive tutorial 2022-10-02 
+
+[바로가기](https://github.com/ChanhyukPark-Tech/MobileProgramming/tree/main/flutter_hive_tutorial)
