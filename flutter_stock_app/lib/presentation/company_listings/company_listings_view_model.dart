@@ -36,7 +36,6 @@ class CompanyListingsViewModel with ChangeNotifier {
     notifyListeners();
 
     final result = await _repository.getCompanyListings(fetchFromRemote, query);
-
     result.when(success: (listings) {
       _state = state.copyWith(companies: listings);
     }, error: (e) {
