@@ -1,16 +1,24 @@
-# flutter_stock_app
+# 플러터 주식 검색 앱
 
-A new Flutter project.
+## DEMO (권한 설정 문제 및 네이티브를 조작하지 않아서 IOS 데모 영상만 준비했습니다)
 
-## Getting Started
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/69495129/193437884-956b2549-b386-4adc-a43e-242749d6184b.gif)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### 배운점
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 무분별한 API통신을 막기위한 플러터에서 Timer를 사용한, debounce 사용방법 
+- freezed 패키지를 사용하여 여러 유틸 메소드를 제공받는 방법
+- MVVM 패턴을 사용한 클린아키텍쳐 구조 학습(데이터의 흐름 확실하게 정립, 이 예제에서는 use_case를 생략하였습니다.)
+- dart 에서 csv 패키지를 활용한 csv read 하는 방법
+- Hive 를 사용한 로컬 데이터 캐싱하는 방법(Hive box 를 살핀후 없다면 api를 호출하는것이 인상깊었습니다)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 느낀점
+간단한 애플리케이션이라도, 클린 아키텍쳐를 잘 적용하여 애플리케이션을 만든다면 새로운 기능이 추가 되었을때 바로바로 적용이 가능하다는 것을 느꼈습니다.
+그러므로 어떠한 서비스를 할 때라도 당연히 기능이 추가되어야 할 상황이 많이 생길것이기 때문에 초기에 확실한 아키텍쳐를 설계하고 애플리케이션을 구축해야겠다고 생각했습니다.
+
+주가 그래프를 이미지 형태로 불러오는 것이 아닌, csv 값을 읽어서 하나하나 그렸습니다. 이를 하기 위해서 플러터에서 캔버스 사용법을 익혔는데, 역시 아직 익숙하지 않아서그런지 어렵다고 생각했습니다.
+이 부분은 나중에 UI를 깊게 다뤄야할 때에 학습해야겠다고 생각했습니다. 당연히 캔버스를 활용하니 이미지 소스를 받아서 유저에게 이미지를 보여줄때보다는 훨씬 빠르게 유저에게 정보를 제공해줄 수 있었습니다. 또한 이미지는 색상이 고정되거나 여러 제약이 있다면, 캔버스로 그린다면 언제든지 색상 변경 interval 값 변경들을 할 수 있기 때문에 자유도가 보장된다고 느꼈습니다.
+
+항상 파이어베이스로만 플러터 프로젝트를 진행하였고, 외부 API와 데이터를 주고받은 프로젝트는 처음이였는데, 생각했던대로 쉬웠던 것 같습니다! http 패키지를 이용하였지만, 추후 프로젝트에서는 dio도 살펴볼 예정입니다.
+
