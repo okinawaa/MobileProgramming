@@ -1,4 +1,8 @@
+import 'package:flutter_stock_app/domain/repository/stock_repository.dart';
+import 'package:flutter_stock_app/presentation/company_info/company_info_screen.dart';
+import 'package:flutter_stock_app/presentation/company_info/company_info_view_model.dart';
 import 'package:flutter_stock_app/presentation/company_listings/company_listings_action.dart';
+import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
@@ -48,7 +52,17 @@ class CompanyListingsScreen extends StatelessWidget {
                           ListTile(
                             title: Text(state.companies[index].name),
                             onTap: () {
-                              // 상세 페이지로 이동 로직 구현
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                final repository =
+                                    GetIt.instance<StockRepository>();
+                                final symbol = state.companies[index].symbol;
+                                return ChangeNotifierProvider(
+                                  create: (_) =>
+                                      CompanyInfoViewModel(repository, symbol),
+                                  child: const CompanyInfoScreen(),
+                                );
+                              }));
                             },
                           ),
                           Divider(

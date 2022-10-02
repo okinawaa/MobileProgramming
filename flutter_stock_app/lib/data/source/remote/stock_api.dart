@@ -11,6 +11,7 @@ class StockApi {
 
   StockApi({http.Client? client}) : _client = (client ?? http.Client());
 
+  // return is CSV file
   Future<http.Response> getListings({String apiKey = apiKey}) async {
     return await _client.get(
         Uri.parse('$baseUrl/query?function=LISTING_STATUS&apikey=$apiKey'));
