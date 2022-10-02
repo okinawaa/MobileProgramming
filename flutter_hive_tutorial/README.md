@@ -1,16 +1,6 @@
-# flutter_hive_tutorial
+# flutter local DB Hive tutorial
 
-A new Flutter project.
+### trouble shooting
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- devDep 로 hive_generator 를 설치하지 않고, build_runner 를 계속 실행시키고 있었다.. hive 를 사용할때에는 hive_generator 도 꼭 설치하자
+- hive 와 freezed 동시에 사용하기 copywith 이 필요했음.
