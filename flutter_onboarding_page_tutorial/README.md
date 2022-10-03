@@ -1,16 +1,19 @@
-# flutter_onboarding_page_tutorial
+# 플러터 온보딩 페이지 퍼블리싱
 
-A new Flutter project.
+온보딩 페이지는 상용앱에도 자주 사용되는 페이지이며, 라이브러리를 사용하기보다는 실제 구현함으로써 자유도를 가져가기 위해서 연습해봤다.
+플러터 자체가 UI를 너무 쉽게 그려주는 프레임워크이다보니, 생각보다 너무 쉽게 해결할 수 있었다. 
+앞으로도 라이브러리를 쉽게 사용할 수 있더라도, 사용하지 않고 구현할 것 같다.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### DEMO (특별한 기능은 없어서 only android)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/69495129/193509159-5101b953-e010-44e4-a294-68f18b59917c.gif)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 배운점
+
+- PageView widget
+  - 이런것까지 빌트인 위젯으로 지원해준다는것에 놀랐다. 어떻게 구현해야할지 처음에 생각할때는 사용자의 터치를 인식하여 translate를 하나하나 만져줘야한다고 생각했지만, 이 위젯은 여러 이미지 및 컴포넌트들을 슬라이드 형태로 자동으로 보여준다는것에 놀랐다. 자주 이용할 것 같다..
+
+- flutter 에서 svg 사용법
+  - 플러터가 아직 svg를 사용하는데 지원을 잘 안해준다고 들었었는데, flutter_svg library를 사용하자 손쉽게 불러와서 사용자에게 보여줄 수 있었다.
